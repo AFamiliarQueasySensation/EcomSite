@@ -20,7 +20,10 @@ private slots:
 
 private:
     void sendResponse();
+    void sendfavico();
+    void sendNotFound();
     const std::unique_ptr<QTcpSocket> m_socket;
+
 
     struct Request {
         std::size_t contentLength{};

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <QCoreApplication>
+#include <QIcon>
 #include "../src/webserver.h"
 
 int main(int argc, char* argv[]){
@@ -7,6 +8,7 @@ int main(int argc, char* argv[]){
 
     WebServer server;
     server.serverStart();
+    
 
 
     a.exec();
