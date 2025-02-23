@@ -3,26 +3,32 @@
 #include <QObject>
 #include <QMap>
 #include <QByteArray>
+#include <QRunnable>
 
 class QTcpSocket;
 
-class handleClient : public QObject
+class handleClient : public QObject, public QRunnable
 {
 
     Q_OBJECT
 
 public:
-    explicit handleClient(QTcpSocket *socket, QObject *parent = nullptr);
+    explicit handleClient(QObject *parent = nullptr);
     ~handleClient() override;
+    void run() Q_DECL_OVERRIDE;
+
+    qintptr socketDescriptor;
 
 private slots:
     void readReady();
+
 
 private:
     void sendResponse();
     void sendfavico();
     void sendNotFound();
-    const std::unique_ptr<QTcpSocket> m_socket;
+    QTcpSocket *m_socket;
+    
 
 
     struct Request {

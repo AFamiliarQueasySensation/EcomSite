@@ -6,23 +6,61 @@
 #include <QFile>
 #include <QUrl>
 #include <QDir>
+#include <QThread>
 #include <QFileINfo>
 #include <QDebug>
+#include <QtLogging>
+#include <QEventLoop>
 
-handleClient::handleClient(QTcpSocket *socket, QObject *parent) : QObject(parent), m_socket(socket)
+handleClient::handleClient(QObject *parent) : QObject(parent)
 {
-    connect(m_socket.get(), &QAbstractSocket::disconnected, this, &QObject::deleteLater);
-    connect(m_socket.get(), &QIODevice::readyRead, this, &handleClient::readReady);
 }
 
-handleClient::~handleClient() {}
+handleClient::~handleClient()
+{
+    qInfo() << this << Q_FUNC_INFO << QThread::currentThread();
+    m_socket->deleteLater();
+}
+
+/**
+ * This is what a QThreadPool Calls, thorugh a signal 
+ */
+void handleClient::run()
+{
+    qInfo() << this << Q_FUNC_INFO << "In Run " << QThread::currentThread();
+
+    m_socket = new QTcpSocket();
+    if (!m_socket->setSocketDescriptor(this->socketDescriptor))
+    {
+        qWarning() << "Error setting socket descriptor:" << m_socket->errorString();
+        delete m_socket;
+        return;
+    }
+
+    m_socket->moveToThread(QThread::currentThread());
+
+    QEventLoop loop;
+
+    // Plumb the disconnect with delete later
+    connect(m_socket, &QIODevice::readyRead, &loop, &QEventLoop::quit, Qt::QueuedConnection);
+
+    qInfo() << this << "Handling Client On" << QThread::currentThread();
+
+    loop.exec();
+
+    handleClient::readReady();
+}
 
 /**
  * Main client reading, where im parsing the request
+ * Socket has everything you need to read from the client, and what they want
+ * using m_state to keep track of the current state that the parse is in
  */
+
 void handleClient::readReady()
 {
-    while ((m_state == ConnectionState::RequestLine || m_state == ConnectionState::RequestHeaders) && m_socket.get()->canReadLine())
+    qInfo() << this << "Reading on: " << QThread::currentThread();
+    while ((m_state == ConnectionState::RequestLine || m_state == ConnectionState::RequestHeaders) && m_socket->canReadLine())
     {
 
         auto line = m_socket->readLine();
@@ -30,10 +68,7 @@ void handleClient::readReady()
         {
             line.chop(2);
         }
-        
 
-
-        
         // method, path, protocol
         if (m_state == ConnectionState::RequestLine)
         {
@@ -55,10 +90,9 @@ void handleClient::readReady()
         }
         else
         {
-            //Finished Going through Headers (Body delimiter i forgot what it called its when u got two \r\n)
+            // Finished Going through Headers (Body delimiter i forgot what it called its when u got two \r\n)
             if (line.isEmpty())
             {
-                qDebug() << m_request.path;
                 if (m_request.contentLength)
                 {
                     m_state = ConnectionState::RequestBody;
@@ -69,14 +103,14 @@ void handleClient::readReady()
                     sendResponse();
                     return;
                 }
-               
-                else{
+
+                else
+                {
                     sendNotFound();
                     return;
                 }
-
             }
-            
+
             static const QRegularExpression expr("^([^:]+): +(.*)$");
             const auto match = expr.match(line);
             if (!match.hasMatch())
@@ -88,7 +122,6 @@ void handleClient::readReady()
 
             const auto name = match.captured(1);
             const auto value = match.captured(2);
-
 
             m_request.headers[name] = value;
 
@@ -116,7 +149,7 @@ void handleClient::readReady()
 
         if (m_request.body.size() == m_request.contentLength)
         {
-
+            qDebug() << "Here";
             m_state = ConnectionState::Response;
             sendResponse();
             return;
@@ -129,35 +162,45 @@ void handleClient::readReady()
  */
 void handleClient::sendResponse()
 {
+ 
+    qInfo() << this << "Sending Reply OK: " << QThread::currentThread();
     QString content;
-    
+
     content += "<H1>Testing</H1>";
-    
+
     const auto encode = content.toUtf8();
     m_socket->write("HTTP/1.1 200 OK\r\n");
     m_socket->write("Content-Type: text/html\r\n");
-    m_socket->write(QString("content-Length: %0\r\n").arg(encode.size()).toUtf8());
+    m_socket->write(QString("Content-Length: %0\r\n").arg(encode.size()).toUtf8());
+    m_socket->write("Connection: close\r\n");
     m_socket->write("\r\n");
     m_socket->write(encode);
+
+
     m_state = ConnectionState::RequestLine;
-    m_request = {};
+    m_request = {}; 
+
+    m_socket->waitForBytesWritten();
 
 }
-
-
 
 /**
  * Error reply for unknown webpage
  */
-void handleClient::sendNotFound(){
+void handleClient::sendNotFound()
+{
     QString content;
     content += "<H1> Error 404 </H1>";
-
+    
     const auto encode = content.toUtf8();
+    m_socket->flush();
     m_socket->write("HTTP/1.1 404 Not Found\r\n");
     m_socket->write("Content-Type: text/html\r\n");
     m_socket->write(QString("Content-Length: %0\r\n").arg(encode.size()).toUtf8());
     m_socket->write("\r\n");
     m_socket->write(encode);
-    m_socket->disconnectFromHost();
+    m_socket->waitForBytesWritten();
+
+
 }
+

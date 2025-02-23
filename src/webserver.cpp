@@ -1,45 +1,43 @@
 #include "../src/webserver.h"
 #include "../src/handleClient.h"
-#include <QTcpServer>
 
 #define PORT 80
+#define MAX_THREAD_COUNT 5
 
-WebServer::WebServer(QObject *parent) : QObject(parent), m_server(std::make_unique<QTcpServer>())
+WebServer::WebServer(QObject *parent) : QTcpServer(parent)
 {
-
-    connect(m_server.get(), &QTcpServer::newConnection,this, &WebServer::newConnection);
-    
+    qInfo() << this << "Created Server on: " << QThread::currentThread();
+    QThreadPool::globalInstance()->setMaxThreadCount(MAX_THREAD_COUNT);
 }
 
 WebServer::~WebServer() {}
 
 /**
  * Server Start, Listeing on port specified above currently on any host address
- * 
+ *
  */
-void WebServer::serverStart(){
-    if (!m_server->listen(QHostAddress::Any, PORT)){
-        qDebug() << "Error: " << m_server->errorString();
+void WebServer::serverStart()
+{
+    if (this->listen(QHostAddress::Any, PORT))
+    {
+        qDebug() << "Currently listening on " << PORT;
     }
-    else{
-        qDebug() << "Currently listening on 10184";
+    else
+    {
+        qDebug() << "Error: " << this->errorString();
     }
-    
-
 }
 
 /**
  * Listener class, and calls handle class from handleClient, on the new connection.
  */
 
-void WebServer::newConnection(){
-    const auto socket = m_server->nextPendingConnection();
-    
+void WebServer::incomingConnection(qintptr handle)
+{
+    qInfo() << this << Q_FUNC_INFO << "Accepted new connection " << QThread::currentThread();
 
-    if (!socket){
-        return;
-    }
-    
-    new handleClient(socket);
-
+    handleClient *client = new handleClient();
+    client->setAutoDelete(true);
+    client->socketDescriptor = handle;
+    QThreadPool::globalInstance()->start(client);
 }

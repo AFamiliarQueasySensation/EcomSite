@@ -2,28 +2,25 @@
 
 #include <QtCore/QObject>
 #include <memory>
+#include <QThread>
+#include <QTcpServer>
+#include <QTcpSocket>
+#include <QThreadPool>
 #include <QDebug>
 
 
-class QTcpServer;
 
-class WebServer : public QObject
+class WebServer : public QTcpServer
 {
     Q_OBJECT
 
-    public: 
-
-        explicit WebServer(QObject *parent = nullptr);
-        ~WebServer();
-        void serverStart();
-
-    private:
-        void newConnection();
+public:
+    explicit WebServer(QObject *parent = nullptr);
+    ~WebServer();
+    void serverStart();
 
 
-    
-    private:
-        std::unique_ptr<QTcpServer> m_server; //Apparently unique ptrs seld delete at the end of the scope
-        int port;
+protected:
+    void incomingConnection( qintptr handle ) override;
 
 };

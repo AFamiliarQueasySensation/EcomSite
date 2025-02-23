@@ -14,7 +14,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Network WebSockets)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Network WebSockets Concurrent)
 
 
 add_executable(EcomSite 
@@ -22,6 +22,9 @@ add_executable(EcomSite
     src/main.cpp
     src/webserver.cpp
     src/handleClient.cpp
+    src/webserver.h
+    src/handleClient.h
+
     
     )
 
@@ -30,5 +33,5 @@ WIN32_EXECUTABLE FALSE
 MACOSX_BUNDLE FALSE
 )
 
-target_link_libraries(EcomSite PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Network Qt6::WebSockets)
+target_link_libraries(EcomSite PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Network Qt6::WebSockets Qt6::Concurrent)
 
