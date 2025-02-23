@@ -23,7 +23,7 @@ handleClient::~handleClient()
 }
 
 /**
- * This is what a QThreadPool Calls, thorugh a signal 
+ * This is what a QThreadPool Calls, thorugh a signal
  */
 void handleClient::run()
 {
@@ -39,16 +39,13 @@ void handleClient::run()
 
     m_socket->moveToThread(QThread::currentThread());
 
-    QEventLoop loop;
-
     // Plumb the disconnect with delete later
-    connect(m_socket, &QIODevice::readyRead, &loop, &QEventLoop::quit, Qt::QueuedConnection);
+    //Apparently adding waitForReadyRead makes it a direct connection not queued connection because as soon as it hits, it goes directly to readyRead
+    QObject::connect(m_socket, &QIODevice::readyRead, this, &handleClient::readReady, Qt::DirectConnection);
+    m_socket->waitForReadyRead();
 
     qInfo() << this << "Handling Client On" << QThread::currentThread();
 
-    loop.exec();
-
-    handleClient::readReady();
 }
 
 /**
