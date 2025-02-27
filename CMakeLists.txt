@@ -14,7 +14,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Network WebSockets Concurrent)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Network WebSockets Concurrent Core5Compat)
 
 
 add_executable(EcomSite 
@@ -40,5 +40,5 @@ MACOSX_BUNDLE FALSE
 )
 link_libraries(openssl-3.4.1/include/openssl)
 
-target_link_libraries(EcomSite PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Network Qt6::WebSockets Qt6::Concurrent)
+target_link_libraries(EcomSite PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Network Qt6::WebSockets Qt6::Concurrent Qt6::Core5Compat)
 

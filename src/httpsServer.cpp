@@ -5,7 +5,9 @@
 #include <QByteArray>
 #include <QSslKey>
 #include <QDir>
+#include <QDebug>
 #include <QThreadPool>
+#include <QCoreApplication>
 
 
 #define PORT 443
@@ -16,28 +18,37 @@ httpsServer::httpsServer(QObject *parent)
 {
     qInfo() << "Generating a https server on thread: " << QThread::currentThreadId();
     QThreadPool::globalInstance()->setMaxThreadCount(MAX_THREAD_COUNT);
+    QString appDir = QCoreApplication::applicationDirPath();
 
 
     m_config = this->sslConfiguration();
 
     //Load Certificate
-    QFile certFile("../keys/fullchain.pem");
+    QFile certFile = appDir + "/../../../keys/fullchain.pem";
     if (certFile.open(QIODevice::ReadOnly))
     {
         QByteArray certData = certFile.readAll();
         QSslCertificate certificate(certData, QSsl::Pem);
         m_config.addCaCertificate(certificate);
+    }else
+    {
+        qCritical() << "Unable to loacte certFile, fix shit code 5 lines above";
     }
 
 
     //Private key
-    QFile keyFile("../keys/cert-key.pem");
+    QString filePath = appDir + "/../../../keys/cert-key.pem";
+    QFile keyFile(filePath);
     if (keyFile.open(QIODevice::ReadOnly))
     {
         QByteArray keyData = keyFile.readAll();
         QSslKey key(keyData, QSsl::Rsa, QSsl::Pem, QSsl::PrivateKey);
         m_config.setPrivateKey(key);
+    }else
+    {
+        qCritical() << "unable to locate code 5 strings above...";
     }
+    
 
     m_config.setProtocol(QSsl::TlsV1_3); // wha tthe fuck is tlsv1_3
 

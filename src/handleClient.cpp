@@ -5,12 +5,12 @@
 #include <QRegularExpression>
 #include <QFile>
 #include <QUrl>
-#include <QDir>
 #include <QThread>
 #include <QFileINfo>
 #include <QDebug>
 #include <QtLogging>
-#include <QEventLoop>
+#include <QTextCodec>
+
 
 handleClient::handleClient(QObject *parent) : QObject(parent)
 {
@@ -161,17 +161,28 @@ void handleClient::sendResponse()
 {
  
     qInfo() << this << "Sending Reply OK: " << QThread::currentThread();
-    QString content;
+    QByteArray content;
+    
+    //Fix this shit from hard coded <===============================================================================================================================
+    QFile reply("C:/Users/vonha/VSCode Grantt/EcomSite/src/index.html");
+    if (reply.open(QIODevice::ReadOnly)){
+          content = reply.readAll();
+    }
+    else{
+        qDebug() << "Failed to open";
+    }
+    qDebug() << content;
+         
+    
+   
 
-    content += "<H1> Hello </H1>";
-
-    const auto encode = content.toUtf8();
+    
     m_socket->write("HTTP/1.1 200 OK\r\n");
     m_socket->write("Content-Type: text/html\r\n");
-    m_socket->write(QString("Content-Length: %0\r\n").arg(encode.size()).toUtf8());
+    m_socket->write(QString("Content-Length: %0\r\n").arg(content.size()).toUtf8());
     m_socket->write("Connection: close\r\n");
     m_socket->write("\r\n");
-    m_socket->write(encode);
+    m_socket->write(content);
 
 
     m_state = ConnectionState::RequestLine;
