@@ -163,7 +163,7 @@ void handleClient::sendResponse()
     qInfo() << this << "Sending Reply OK: " << QThread::currentThread();
     QString content;
 
-    content += "<H1>Testing</H1>";
+    content += "<H1> Hello </H1>";
 
     const auto encode = content.toUtf8();
     m_socket->write("HTTP/1.1 200 OK\r\n");

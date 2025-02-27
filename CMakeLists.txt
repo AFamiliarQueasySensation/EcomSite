@@ -19,11 +19,17 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Network WebSockets Concurr
 
 add_executable(EcomSite 
 
+
     src/main.cpp
     src/webserver.cpp
     src/handleClient.cpp
     src/webserver.h
     src/handleClient.h
+    encrypt/encrypt.h
+    encrypt/encrypt.cpp
+    src/httpsServer.cpp
+    src/httpsServer.h
+    
 
     
     )
@@ -32,6 +38,7 @@ set_target_properties(EcomSite PROPERTIES
 WIN32_EXECUTABLE FALSE
 MACOSX_BUNDLE FALSE
 )
+link_libraries(openssl-3.4.1/include/openssl)
 
 target_link_libraries(EcomSite PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Network Qt6::WebSockets Qt6::Concurrent)
 

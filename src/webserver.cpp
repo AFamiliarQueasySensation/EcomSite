@@ -6,7 +6,7 @@
 
 WebServer::WebServer(QObject *parent) : QTcpServer(parent)
 {
-    qInfo() << this << "Created Server on: " << QThread::currentThread();
+    qInfo() << this << "Started Server on: " << QThread::currentThread();
     QThreadPool::globalInstance()->setMaxThreadCount(MAX_THREAD_COUNT);
 }
 
@@ -18,13 +18,13 @@ WebServer::~WebServer() {}
  */
 void WebServer::serverStart()
 {
-    if (this->listen(QHostAddress::Any, PORT))
+    if (this->listen( QHostAddress::Any ,  PORT ))
     {
         qDebug() << "Currently listening on " << PORT;
     }
     else
     {
-        qDebug() << "Error: " << this->errorString();
+        qDebug() << "Error startServer: " << this->errorString();
     }
 }
 

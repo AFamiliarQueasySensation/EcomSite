@@ -15,7 +15,7 @@ class WebServer : public QTcpServer
     Q_OBJECT
 
 public:
-    explicit WebServer(QObject *parent = nullptr);
+    explicit WebServer( QObject *parent = nullptr );
     ~WebServer();
     void serverStart();
 
