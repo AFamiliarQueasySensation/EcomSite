@@ -1,0 +1,44 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 12,
+                        "durationMicroseconds": 360,
+                        "errorMessage": "",
+                        "functionName": "opacity",
+                        "line": 8
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "",
+                        "functionName": "fillMode",
+                        "line": 9
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 16,
+                        "durationMicroseconds": 112,
+                        "errorMessage": "",
+                        "functionName": "onClicked",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 19,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 14
+                    }
+                ],
+                "filepath": "C:/Users/vonha/Documents/example/ImageButton.qml"
+            }
+        ],
+        "moduleId": "example(appEcomSite)"
+    }
+]

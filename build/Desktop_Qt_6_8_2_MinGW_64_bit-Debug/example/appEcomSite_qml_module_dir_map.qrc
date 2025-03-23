@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/example">C:/Users/vonha/Documents/example/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/example</file>
+
+  </qresource>
+</RCC>

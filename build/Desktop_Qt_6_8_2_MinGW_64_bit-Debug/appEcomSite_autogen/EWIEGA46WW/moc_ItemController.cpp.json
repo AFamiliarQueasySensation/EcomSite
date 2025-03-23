@@ -1,0 +1,172 @@
+{
+    "classes": [
+        {
+            "className": "ItemController",
+            "lineNumber": 10,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "currentItem",
+                    "notify": "currentChangedItem",
+                    "read": "currentItem",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "ItemInfo*",
+                    "user": false,
+                    "write": "setCurrentItem"
+                }
+            ],
+            "qualifiedClassName": "ItemController",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "currentChangedItem",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "switchToPreviousItem",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "switchToNextItem",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "sellerName",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "imageSource",
+                            "type": "QUrl"
+                        },
+                        {
+                            "name": "gifSource",
+                            "type": "QUrl"
+                        },
+                        {
+                            "name": "videoSource",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "addItem",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "sellerName",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "imageSource",
+                            "type": "QUrl"
+                        },
+                        {
+                            "name": "gifSource",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 4,
+                    "isCloned": true,
+                    "name": "addItem",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "sellerName",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "imageSource",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 5,
+                    "isCloned": true,
+                    "name": "addItem",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "sellerName",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "isCloned": true,
+                    "name": "addItem",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "removeItem",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "switchToItemByIndex",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ItemController.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,10 @@
+--resource
+C:/Users/vonha/Documents/example/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/.qt/rcc/qmake_example.qrc
+--resource
+C:/Users/vonha/Documents/example/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/.qt/rcc/appEcomSite_raw_qml_0.qrc
+/example/Main.qml
+/example/ItemInfoBox.qml
+/example/ImageButton.qml
+/example/ShoppingCart.qml
+/example/SearchField.qml
+/example/ItemSearchDisplay.qml

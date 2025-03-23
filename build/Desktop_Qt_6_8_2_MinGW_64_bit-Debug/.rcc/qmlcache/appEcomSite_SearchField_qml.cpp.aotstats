@@ -1,0 +1,52 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 22,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on verticalAlignment.",
+                        "functionName": "verticalAlignment",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on horizontalAlignment.",
+                        "functionName": "horizontalAlignment",
+                        "line": 23
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 13,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on weight.",
+                        "functionName": "weight",
+                        "line": 27
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 25,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "onReturnPressed",
+                        "line": 31
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 25,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "onEscapePressed",
+                        "line": 35
+                    }
+                ],
+                "filepath": "C:/Users/vonha/Documents/example/SearchField.qml"
+            }
+        ],
+        "moduleId": "example(appEcomSite)"
+    }
+]

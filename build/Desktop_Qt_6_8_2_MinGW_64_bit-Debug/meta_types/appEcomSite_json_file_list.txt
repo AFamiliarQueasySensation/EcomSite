@@ -1,0 +1,3 @@
+C:/Users/vonha/Documents/example/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/appEcomSite_autogen/include/../EWIEGA46WW/moc_ItemController.cpp.json
+C:/Users/vonha/Documents/example/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/appEcomSite_autogen/include/../EWIEGA46WW/moc_ItemInfo.cpp.json
+C:/Users/vonha/Documents/example/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/appEcomSite_autogen/include/../EWIEGA46WW/moc_ItemSearch.cpp.json

@@ -1,0 +1,62 @@
+{
+    "classes": [
+        {
+            "className": "ItemSearch",
+            "lineNumber": 9,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "isSearching",
+                    "notify": "isSearchingChanged",
+                    "read": "isSearching",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "ItemSearch",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "isSearchingChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "searchItems",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "parseData",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ItemSearch.h",
+    "outputRevision": 68
+}

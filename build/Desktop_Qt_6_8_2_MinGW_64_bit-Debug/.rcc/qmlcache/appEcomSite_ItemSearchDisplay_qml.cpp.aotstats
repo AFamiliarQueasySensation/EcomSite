@@ -1,0 +1,228 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 12,
+                        "durationMicroseconds": 424,
+                        "errorMessage": "Cannot access value for name ItemSearch",
+                        "functionName": "model",
+                        "line": 23
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 14,
+                        "durationMicroseconds": 287,
+                        "errorMessage": "Cannot access value for name ItemSearch",
+                        "functionName": "visible",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 142,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 14,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot access value for name listview",
+                        "functionName": "width",
+                        "line": 36
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 19,
+                        "durationMicroseconds": 133,
+                        "errorMessage": "",
+                        "functionName": "fillMode",
+                        "line": 53
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 17,
+                        "durationMicroseconds": 80,
+                        "errorMessage": "",
+                        "functionName": "source",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 17,
+                        "durationMicroseconds": 84,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 46
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 27,
+                        "durationMicroseconds": 78,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 17,
+                        "durationMicroseconds": 80,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 62
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 18,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 63
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 16,
+                        "durationMicroseconds": 96,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 64
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 18,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 70
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 18,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "elide",
+                        "line": 71
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 25,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "",
+                        "functionName": "fontSizeMode",
+                        "line": 72
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 17,
+                        "durationMicroseconds": 70,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 75
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 19,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 82
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 18,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 89
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 18,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "",
+                        "functionName": "elide",
+                        "line": 90
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 25,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "fontSizeMode",
+                        "line": 91
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 17,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 94
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 19,
+                        "durationMicroseconds": 77,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 100
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 20,
+                        "durationMicroseconds": 186,
+                        "errorMessage": "Cannot access value for name ItemController",
+                        "functionName": "onClicked",
+                        "line": 109
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 107
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 14,
+                        "durationMicroseconds": 175,
+                        "errorMessage": "Cannot access value for name ItemSearch",
+                        "functionName": "visible",
+                        "line": 123
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 11,
+                        "durationMicroseconds": 145,
+                        "errorMessage": "Cannot access value for name ItemSearch",
+                        "functionName": "text",
+                        "line": 124
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 77,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 120
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 20,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 139
+                    }
+                ],
+                "filepath": "C:/Users/vonha/Documents/example/ItemSearchDisplay.qml"
+            }
+        ],
+        "moduleId": "example(appEcomSite)"
+    }
+]

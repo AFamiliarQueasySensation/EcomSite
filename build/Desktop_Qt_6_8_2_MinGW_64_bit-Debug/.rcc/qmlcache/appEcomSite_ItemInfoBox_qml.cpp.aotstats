@@ -1,0 +1,188 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 12,
+                        "durationMicroseconds": 189,
+                        "errorMessage": "Cannot access value for name ItemController",
+                        "functionName": "visible",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 21,
+                        "durationMicroseconds": 353,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onVisibleChanged",
+                        "line": 112
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 13,
+                        "durationMicroseconds": 170,
+                        "errorMessage": "Cannot access value for name ItemController",
+                        "functionName": "source",
+                        "line": 45
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 105,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 39
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 13,
+                        "durationMicroseconds": 151,
+                        "errorMessage": "Cannot access value for name ItemController",
+                        "functionName": "source",
+                        "line": 52
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 12,
+                        "durationMicroseconds": 64,
+                        "errorMessage": "",
+                        "functionName": "loops",
+                        "line": 53
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 18,
+                        "durationMicroseconds": 88,
+                        "errorMessage": "",
+                        "functionName": "onClicked",
+                        "line": 57
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 21,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 56
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 13,
+                        "durationMicroseconds": 181,
+                        "errorMessage": "Cannot access value for name ItemController",
+                        "functionName": "source",
+                        "line": 73
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 67
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 68
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 15,
+                        "durationMicroseconds": 64,
+                        "errorMessage": "",
+                        "functionName": "wrapMode",
+                        "line": 86
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 11,
+                        "durationMicroseconds": 197,
+                        "errorMessage": "Cannot access value for name ItemController",
+                        "functionName": "text",
+                        "line": 87
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 15,
+                        "durationMicroseconds": 78,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 79
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 80
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 14,
+                        "durationMicroseconds": 65,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 82
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 15,
+                        "durationMicroseconds": 102,
+                        "errorMessage": "",
+                        "functionName": "wrapMode",
+                        "line": 104
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 11,
+                        "durationMicroseconds": 180,
+                        "errorMessage": "Cannot access value for name ItemController",
+                        "functionName": "text",
+                        "line": 105
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 12,
+                        "durationMicroseconds": 71,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 98
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 14,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 101
+                    }
+                ],
+                "filepath": "C:/Users/vonha/Documents/example/ItemInfoBox.qml"
+            }
+        ],
+        "moduleId": "example(appEcomSite)"
+    }
+]

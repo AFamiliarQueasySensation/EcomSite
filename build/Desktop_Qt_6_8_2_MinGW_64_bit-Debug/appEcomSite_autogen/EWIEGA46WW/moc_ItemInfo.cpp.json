@@ -1,0 +1,322 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                }
+            ],
+            "className": "ItemInfo",
+            "lineNumber": 9,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 0,
+                    "name": "itemIndex",
+                    "notify": "itemIndexChanged",
+                    "read": "itemIndex",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setItemIndex"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 1,
+                    "name": "itemName",
+                    "notify": "itemNameChanged",
+                    "read": "itemName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setItemName"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 2,
+                    "name": "itemId",
+                    "notify": "itemIdChanged",
+                    "read": "itemId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setItemId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 3,
+                    "name": "description",
+                    "notify": "descriptionChanged",
+                    "read": "description",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setDescription"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 4,
+                    "name": "productType",
+                    "notify": "productTypeChanged",
+                    "read": "productType",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setProductType"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 5,
+                    "name": "createdAt",
+                    "notify": "createdAtChanged",
+                    "read": "createdAt",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setCreatedAt"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 6,
+                    "name": "tags",
+                    "notify": "tagsChanged",
+                    "read": "tags",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false,
+                    "write": "setTags"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 7,
+                    "name": "sizes",
+                    "notify": "sizesChanged",
+                    "read": "sizes",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false,
+                    "write": "setSizes"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 8,
+                    "name": "prices",
+                    "notify": "pricesChanged",
+                    "read": "prices",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false,
+                    "write": "setPrices"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 9,
+                    "name": "imageGallery",
+                    "notify": "imageGalleryChanged",
+                    "read": "imageGallery",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QList<QUrl>",
+                    "user": false,
+                    "write": "setImageGallery"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 10,
+                    "name": "sellerName",
+                    "notify": "sellerNameChanged",
+                    "read": "sellerName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setSellerName"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 11,
+                    "name": "imageSource",
+                    "notify": "imageSourceChanged",
+                    "read": "imageSource",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QUrl",
+                    "user": false,
+                    "write": "setImageSource"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 12,
+                    "name": "videoSource",
+                    "notify": "videoSourceChanged",
+                    "read": "videoSource",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QUrl",
+                    "user": false,
+                    "write": "setVideoSource"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 13,
+                    "name": "gifSource",
+                    "notify": "gifSourceChanged",
+                    "read": "gifSource",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QUrl",
+                    "user": false,
+                    "write": "setGifSource"
+                }
+            ],
+            "qualifiedClassName": "ItemInfo",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "itemIndexChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "itemNameChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "sellerNameChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "imageSourceChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "videoSourceChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "gifSourceChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "itemIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "name": "descriptionChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "name": "productTypeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "name": "createdAtChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 10,
+                    "name": "tagsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 11,
+                    "name": "sizesChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 12,
+                    "name": "pricesChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 13,
+                    "name": "imageGalleryChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ItemInfo.h",
+    "outputRevision": 68
+}

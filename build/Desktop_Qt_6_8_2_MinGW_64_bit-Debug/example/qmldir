@@ -1,0 +1,10 @@
+module example
+typeinfo appEcomSite.qmltypes
+prefer :/example/
+Main 1.0 Main.qml
+ItemInfoBox 1.0 ItemInfoBox.qml
+ImageButton 1.0 ImageButton.qml
+ShoppingCart 1.0 ShoppingCart.qml
+SearchField 1.0 SearchField.qml
+ItemSearchDisplay 1.0 ItemSearchDisplay.qml
+

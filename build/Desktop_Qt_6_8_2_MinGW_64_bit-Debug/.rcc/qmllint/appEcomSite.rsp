@@ -1,0 +1,15 @@
+--bare
+-I
+C:/Users/vonha/Documents/example/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug
+-I
+C:/Qt/6.8.2/mingw_64/qml
+--resource
+C:/Users/vonha/Documents/example/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/.qt/rcc/qmake_example.qrc
+--resource
+C:/Users/vonha/Documents/example/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/.qt/rcc/appEcomSite_raw_qml_0.qrc
+C:/Users/vonha/Documents/example/Main.qml
+C:/Users/vonha/Documents/example/ItemInfoBox.qml
+C:/Users/vonha/Documents/example/ImageButton.qml
+C:/Users/vonha/Documents/example/ShoppingCart.qml
+C:/Users/vonha/Documents/example/SearchField.qml
+C:/Users/vonha/Documents/example/ItemSearchDisplay.qml

@@ -1,0 +1,244 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 12,
+                        "durationMicroseconds": 230,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 20
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 21
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 14,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 18,
+                        "durationMicroseconds": 149,
+                        "errorMessage": "",
+                        "functionName": "onClicked",
+                        "line": 50
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 16,
+                        "durationMicroseconds": 83,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 41
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 25,
+                        "durationMicroseconds": 74,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 42
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 18,
+                        "durationMicroseconds": 301,
+                        "errorMessage": "",
+                        "functionName": "onClicked",
+                        "line": 67
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 15,
+                        "durationMicroseconds": 78,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 59
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 25,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 60
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 22,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "Cannot access value for name ItemSearch",
+                        "functionName": "onTextEntered",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 27,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on horizontalCenter.",
+                        "functionName": "horizontalCenter",
+                        "line": 81
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 25,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on verticalCenter.",
+                        "functionName": "verticalCenter",
+                        "line": 82
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 20,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: searchbar",
+                        "functionName": "onClicked",
+                        "line": 86
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 85
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 29,
+                        "durationMicroseconds": 177,
+                        "errorMessage": "",
+                        "functionName": "onEscapePressed",
+                        "line": 92
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 12,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 107
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 108
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 14,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 109
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 15,
+                        "durationMicroseconds": 65,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 110
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 25,
+                        "durationMicroseconds": 78,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 127
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 15,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 128
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 16,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 129
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 17,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 130
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 143
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 8,
+                        "durationMicroseconds": 162,
+                        "errorMessage": "",
+                        "functionName": "y",
+                        "line": 145
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 89,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 140
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 14,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 141
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 8,
+                        "durationMicroseconds": 248,
+                        "errorMessage": "",
+                        "functionName": "x",
+                        "line": 156
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 12,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 153
+                    }
+                ],
+                "filepath": "C:/Users/vonha/Documents/example/Main.qml"
+            }
+        ],
+        "moduleId": "example(appEcomSite)"
+    }
+]

@@ -1,0 +1,36 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 12,
+                        "durationMicroseconds": 394,
+                        "errorMessage": "Cannot access value for name ItemSearch",
+                        "functionName": "model",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 142,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 20,
+                        "durationMicroseconds": 74,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 29
+                    }
+                ],
+                "filepath": "C:/Users/vonha/Documents/example/SearchPannel.qml"
+            }
+        ],
+        "moduleId": "example(appEcomSite)"
+    }
+]
