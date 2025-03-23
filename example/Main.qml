@@ -34,8 +34,9 @@ Window {
       }
     }
 
+    //Shopping Cart Icon
     ImageButton {
-      id: menuIcon
+      id: shoppingCartIcon
       anchors {
         right: parent.right
         verticalCenter: parent.verticalCenter
@@ -50,6 +51,27 @@ Window {
         shoppingCart.hidden = !shoppingCart.hidden
       }
     }
+
+    // Home Icon
+    ImageButton {
+      id: homeIcon
+      anchors {
+        left: parent.left
+        verticalCenter: parent.verticalCenter
+        leftMargin: 20
+      }
+
+      width: 32
+      height: 32
+      source: "assets/icons/homeIcon.png"
+      onClicked: {
+        searchdisplay.hidden = true
+        item.visible = true
+        item.forceActiveFocus(Qt.MouseFocusReason)
+      }
+    }
+
+    //Search bar
     SearchField {
       id: searchbar
       color: "black"
@@ -63,21 +85,22 @@ Window {
         anchors.fill: parent
         onClicked: {
           searchbar.forceActiveFocus(Qt.MouseFocusReason)
-          searchdisplay.hidden = !searchdisplay.hidden
+          searchdisplay.hidden = false
           item.visible = !item.visible
         }
       }
       Keys.onEscapePressed: {
         item.visible = !item.visible
-        searchdisplay.hidden = !searchdisplay.hidden
+        searchdisplay.hidden = true
       }
 
       onTextEntered: {
-        ItemSearch.searchItems(text)
+        ItemSearch.searchItems(text.toLowerCase())
       }
     }
   } // Top Bar
 
+  //Main Display Area
   Rectangle {
     id: middlebar
     anchors {
@@ -104,11 +127,13 @@ Window {
         verticalCenter: parent.verticalCenter
         left: parent.left
         right: parent.right
-        margins: 80
+        bottom: parent.bottom
+        margins: 15
       }
     }
   } // Middle Bar
 
+  //Searching area (Shows results of search)
   ItemSearchDisplay {
     id: searchdisplay
     anchors {
@@ -120,6 +145,7 @@ Window {
     y: hidden ? parent.height : topbar.height
   }
 
+  //Shopping cart
   ShoppingCart {
     id: shoppingCart
 
@@ -127,6 +153,6 @@ Window {
       top: topbar.bottom
     }
 
-    x: hidden ? parent.width : parent.width - width
+    x: hidden ? parent.width : parent.width - width - 10
   }
 } // Window

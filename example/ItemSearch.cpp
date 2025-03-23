@@ -16,24 +16,7 @@ namespace {
 
 
 ItemSearch::ItemSearch(QObject *parent)
-{
-
-    for (int i = 0; i < 7 ; i++){
-        ItemInfo *item1 = new ItemInfo(this);
-        item1->setSellerName("Example1");
-        item1->setItemName("Item1");
-        item1->setImageSource(QUrl("https://cdn.shopify.com/s/files/1/0098/8822/files/LiftingOversizedWovenPantGSStrengthGreenA6A3R-ECJH-1068_1042f630-aee4-41ec-8975-c9b42f353971.jpg?v=1713881558"));
-        item1->setVideoSource(QUrl(""));
-        item1->setGifSource(QUrl(""));
-
-
-        m_itemList.append(item1);
-    }
-
-
-
-
-}
+{}
 
 int ItemSearch::rowCount(const QModelIndex &parent) const
 {
@@ -46,17 +29,41 @@ QVariant ItemSearch::data(const QModelIndex &index, int role) const
     if (index.isValid() && index.row() >= 0 && index.row() < m_itemList.size()){
         ItemInfo *itemInfo = m_itemList[index.row()];
 
-        switch ((Role)role) {
-            case ItemNameRole:
-                return itemInfo->itemName();
-            case ItemAuthorRole:
-                return itemInfo->sellerName();
-            case ItemImageSourceRole:
-                return itemInfo->imageSource();
-            case ItemSourceRole:
-                return itemInfo->gifSource();
-            case ItemVideoSourceRole:
-                return itemInfo->videoSource();
+        switch ((ItemRole)role) {
+        case ItemNameRole:
+            return itemInfo->itemName();
+        case ItemAuthorRole:
+            return itemInfo->sellerName();
+        case ItemImageSourceRole:
+            return itemInfo->imageSource();
+        case ItemSourceRole:
+            return itemInfo->gifSource();
+        case ItemVideoSourceRole:
+            return itemInfo->videoSource();
+        case ItemIndexRole:
+            return itemInfo->itemIndex();
+        case ItemIdRole:
+            return itemInfo->itemId();
+        case ItemDescriptionRole:
+            return itemInfo->description();
+        case ItemProductTypeRole:
+            return itemInfo->productType();
+        case ItemCreatedAtRole:
+            return itemInfo->createdAt();
+        case ItemTagsRole:
+            return itemInfo->tags();
+        case ItemSizesRole:
+            return itemInfo->sizes();
+        case ItemPricesRole:
+            return itemInfo->prices();
+        case ItemImageGalleryRole:
+            return QVariant::fromValue(itemInfo->imageGallery()); // mot sure this gonna work
+        case ItemSellerNameRole:
+            return itemInfo->sellerName();
+        case ItemGifSourceRole:
+            return itemInfo->gifSource();
+        default:
+            return QVariant();
         }
     }
     return {};
@@ -64,13 +71,23 @@ QVariant ItemSearch::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> ItemSearch::roleNames() const
 {
-
     QHash<int, QByteArray> names;
     names[ItemNameRole] = "itemTitle";
     names[ItemAuthorRole] = "itemSeller";
     names[ItemImageSourceRole] = "itemImageSource";
     names[ItemSourceRole] = "itemGifSource";
     names[ItemVideoSourceRole] = "itemVideoSource";
+    names[ItemIndexRole] = "index";
+    names[ItemIdRole] = "itemId";
+    names[ItemDescriptionRole] = "description";
+    names[ItemProductTypeRole] = "productType";
+    names[ItemCreatedAtRole] = "createdAt";
+    names[ItemTagsRole] = "tags";
+    names[ItemSizesRole] = "sizes";
+    names[ItemPricesRole] = "prices";
+    names[ItemImageGalleryRole] = "imageGallery";
+    names[ItemSellerNameRole] = "sellerName";
+    names[ItemGifSourceRole] = "gifSource";
 
     return names;
 }
@@ -87,10 +104,7 @@ void ItemSearch::searchItems(const QString &name)
                 m_reply = nullptr;
             }
 
-            QUrlQuery query;
-            query.addQueryItem("client_id", client_id);
-            query.addQueryItem("item_name", name);
-            query.addQueryItem("format", "json");
+
             setIsSearching(true);
 
             /* Name is the name of the site you want, you literally jst do it like that and it will reutrn something if it got something*/
@@ -104,48 +118,70 @@ void ItemSearch::searchItems(const QString &name)
 
 void ItemSearch::parseData()
 {
-    setIsSearching(false);
 
-    return;
+
     if (m_reply->error() == QNetworkReply::NoError){
+        //beginresetmodel, means any previous data reporteed from the model is now invalid and has to be queried again.
         beginResetModel();
-
         qDeleteAll(m_itemList);
         m_itemList.clear();
 
         QByteArray data = m_reply->readAll();
-
         QJsonDocument jsonDocument = QJsonDocument::fromJson(data);
+        QJsonArray products = jsonDocument["products"].toArray();
+        int index = 0;
 
-        /* Two Main headers, and results*/
-        /* Check if header successful first*/
+        //Parse Data Here
+        for (const QJsonValue &value : products) {
+            QJsonObject obj = value.toObject();
+            ItemInfo *item = new ItemInfo(this);
+            //Default to no images
+            item->setVideoSource(QUrl(""));
+            item->setGifSource(QUrl(""));
+            item->setImageSource(QUrl(""));
 
-        QJsonObject headers = jsonDocument["headers"].toObject();
+            //Product Descriptions
+            item->setItemName(obj["title"].toString());
+            item->setItemId(QString::number(obj["id"].toVariant().toLongLong()));
+            item->setDescription(obj["body_html"].toString());
+            item->setProductType(obj["product_type"].toString());
+            item->setCreatedAt(obj["created_at"].toString());
+            item->setSellerName(obj["vendor"].toString());
 
-        if (headers["status"] == "success") {
-            QJsonArray result = jsonDocument["results"].toArray();
+            //Tags
+            QJsonArray tagsArray = obj["tags"].toArray();
+            QStringList tagList;
+            for (const QJsonValue &t : tagsArray)
+                tagList.append(t.toString());
+            item->setTags(tagList);
 
-            for (const auto &i : result) {
-                /*try to send back more than one reply */
-                QJsonObject entry = i.toObject();
-                ItemInfo *itemInfo = new ItemInfo(this);
-
-                itemInfo->setItemName(entry["item_name"].toString());
-                itemInfo->setSellerName(entry["seller_name"].toString());
-                itemInfo->setImageSource(entry["image_source"].toString());
-                itemInfo->setGifSource(entry["gif_source"].toString());
-                itemInfo->setVideoSource(entry["video_source"].toString());
-
-
-                m_itemList << itemInfo;
-
+            //Variants, Sizes, Prices
+            QJsonArray variants = obj["variants"].toArray();
+            QStringList sizes;
+            QStringList prices;
+            for (const QJsonValue &v : variants) {
+                QJsonObject varObj = v.toObject();
+                sizes.append(varObj["title"].toString());
+                prices.append(varObj["price"].toString());
             }
+            item->setSizes(sizes);
+            item->setPrices(prices);
 
+            //Images
+            QJsonArray images = obj["images"].toArray();
+            QList<QUrl> imageUrls;
+            for (const QJsonValue &imgVal : images) {
+                QJsonObject img = imgVal.toObject();
+                imageUrls.append(QUrl(img["src"].toString()));
+            }
+            item->setImageSource(imageUrls.front());
+            item->setImageGallery(imageUrls);
 
-        } else {
-            qCritical() << "Error in ItemSearching ParseData: " << m_reply->errorString();
-
+            m_itemList.append(item);
         }
+
+
+        setIsSearching(false);
         endResetModel();
         m_reply->deleteLater();
         m_reply = nullptr;

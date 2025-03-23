@@ -34,6 +34,7 @@ TextField {
   }
   Keys.onEscapePressed: {
     root.focus = false
+    root.text = ""
   }
 
   leftPadding: 10

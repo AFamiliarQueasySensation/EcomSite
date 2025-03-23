@@ -29,7 +29,6 @@ qt_add_qml_module(appEcomSite
         ItemInfoBox.qml
         ImageButton.qml
         ShoppingCart.qml
-        SearchPannel.qml
         SearchField.qml
         ItemSearchDisplay.qml
 
@@ -48,6 +47,7 @@ qt_add_qml_module(appEcomSite
         assets/icons/addButton.png
         assets/icons/trashcan.png
         assets/icons/menu_icon.png
+        assets/icons/homeIcon.png
 
 
 )

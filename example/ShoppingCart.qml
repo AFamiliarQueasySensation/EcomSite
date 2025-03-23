@@ -16,7 +16,7 @@ Rectangle {
     id: shoppingCartText
 
     anchors {
-      left: parent.left
+      horizontalCenter: parent.horizontalCenter
       top: parent.top
       margins: 10
     }
@@ -56,7 +56,7 @@ Rectangle {
       height: 50
       radius: 10
 
-      color: "lightgrey"
+      color: "grey"
 
       Column {
         id: textColumn
@@ -124,6 +124,7 @@ Rectangle {
     }
   }
 
+  //As Useless as this is u cannot delete it because it is the index for how long the ListView Can travel before cutting off
   ImageButton {
     id: addButton
     anchors {
@@ -131,8 +132,8 @@ Rectangle {
       bottom: parent.bottom
       margins: 20
     }
-    source: "assets/icons/addButton.png"
 
+    //source: "assets/icons/addButton.png"
     height: 32
     width: 32
 

@@ -7,6 +7,7 @@
 
 int main(int argc, char *argv[])
 {
+
     QGuiApplication app(argc, argv);
 
 
@@ -29,6 +30,7 @@ int main(int argc, char *argv[])
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
     engine.loadFromModule("example", "Main"); // Make sure EXAMPLE is the name of your directory that Main.qml is in or else it says fuck you, and make sure its also same in cmake
+
 
 
 

@@ -3,8 +3,30 @@ import QtMultimedia
 import com.company.ItemController
 import example
 
-Item {
+/* Main Display screne in home page */
+Rectangle {
   id: root
+  width: 800
+  height: 600
+  radius: 10
+  antialiasing: true
+
+  border {
+    color: "white"
+    width: 0.5
+  }
+
+  gradient: Gradient {
+    GradientStop {
+      position: 0.0
+      color: "#434343"
+    }
+    GradientStop {
+      position: 1.0
+      color: "#434343"
+    }
+  }
+
   visible: ItemController.currentItem
 
   readonly property ItemInfo infoProvider: ItemInfo {}
@@ -15,6 +37,7 @@ Item {
     anchors {
       verticalCenter: parent.verticalCenter
       left: parent.left
+      leftMargin: 30
     }
 
     width: 150
@@ -42,7 +65,7 @@ Item {
 
     anchors {
       verticalCenter: parent.verticalCenter
-      left: parent.left
+      left: itemImage.left
     }
 
     width: 150

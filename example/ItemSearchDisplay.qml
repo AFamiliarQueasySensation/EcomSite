@@ -2,6 +2,7 @@ import QtQuick
 import com.company.ItemController
 import Qt.example.ItemSearch
 
+/* Search model when searching displays all the items into ta delegate, which are displayed using an index*/
 Rectangle {
   id: root
 
@@ -20,8 +21,7 @@ Rectangle {
     spacing: 10
     clip: true
     model: ItemSearch
-    visible: !ItemSearch.isSearching //Sometimes it takes a long time to search
-
+    visible: !ItemSearch.isSearching
     delegate: Rectangle {
 
       id: delegate
@@ -39,6 +39,7 @@ Rectangle {
 
       color: "grey"
 
+      //Image displayed when searching
       Image {
         id: itemimage
         anchors {
@@ -54,6 +55,7 @@ Rectangle {
         source: delegate.itemImageSource
       }
 
+      //Column of texts beside the image
       Column {
         id: textColumn
         anchors {
@@ -63,6 +65,7 @@ Rectangle {
           margins: 5
         }
 
+        //Item title
         Text {
           width: textColumn.width
           elide: Text.ElideRight //truncate to fit width
@@ -80,6 +83,8 @@ Rectangle {
             leftMargin: 170
           }
         }
+
+        // Item Description
         Text {
           width: textColumn.width
           elide: Text.ElideRight //truncate to fit width
@@ -102,6 +107,7 @@ Rectangle {
         anchors.fill: parent
 
         onClicked: {
+          //Adds the item you click from the delegate to the shopping cart here
           ItemController.addItem(delegate.itemTitle, delegate.itemSeller,
                                  delegate.itemImageSource,
                                  delegate.itemGifSource,

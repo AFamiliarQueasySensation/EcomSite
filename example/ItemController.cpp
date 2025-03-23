@@ -6,21 +6,7 @@
 
 ItemController::ItemController(QObject *parent)
     : QAbstractListModel{parent}
-{
-    //Defaulting this to be in the shopping cart
-
-    addItem("Testin1",
-            "Testing1",
-            QUrl("qrc:assets/images/GreenPush1P.png").path(QUrl::FullyDecoded));
-    addItem("Testin2",
-            "Testing2",
-            QUrl("qrc:assets/images/GreenPush1P.png").path(QUrl::FullyDecoded));
-    addItem("Testin3",
-            "Testing3",
-            QUrl("qrc:assets/images/GreenPush1P.png").path(QUrl::FullyDecoded),
-            QUrl("qrc:assets/images/BlueKidnapped.gif").path(QUrl::FullyDecoded));
-
-}
+{}
 
 /**
  *

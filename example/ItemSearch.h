@@ -12,15 +12,24 @@ class ItemSearch : public QAbstractListModel
     Q_PROPERTY(bool isSearching READ isSearching NOTIFY isSearchingChanged)
 
 public:
-    enum Role {
-        ItemNameRole = Qt::UserRole + 1,
+    enum ItemRole {
+        ItemNameRole = Qt::UserRole + 1,         // Adjust the base offset according to your system
         ItemAuthorRole,
         ItemImageSourceRole,
         ItemSourceRole,
-        ItemVideoSourceRole
+        ItemVideoSourceRole,
+        ItemIndexRole,
+        ItemIdRole,
+        ItemDescriptionRole,
+        ItemProductTypeRole,
+        ItemCreatedAtRole,
+        ItemTagsRole,
+        ItemSizesRole,
+        ItemPricesRole,
+        ItemImageGalleryRole,
+        ItemSellerNameRole,
+        ItemGifSourceRole
     };
-
-
 
     explicit ItemSearch(QObject *parent = nullptr);
 
