@@ -51,13 +51,13 @@ Ensure you have the following installed:
 
 ## Screenshots
 _Main Menu_ <br>
-<img src="[https://imgur.com/a/CXeYEU5](https://imgur.com/a/CXeYEU5)" alt="Main Menu" width="300">
+<img src="https://i.imgur.com/tD317ZN.png" alt="Main Menu" width="300">
 
 _Display Results_ <br>
-<img src="https://imgur.com/3MIXwhm" alt="Display Results" width="300">
+<img src="https://i.imgur.com/3MIXwhm.png" alt="Display Results" width="300">
 
 _Item In Cart_ <br>
-<img src="https://imgur.com/2V2HRzB" alt="Item In Cart" width="300">
+<img src="https://i.imgur.com/2V2HRzB.png" alt="Item In Cart" width="300">
 
 
 ## Issues
