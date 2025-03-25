@@ -1,7 +1,7 @@
 
 # Shopify Front ENd
 
-A Project that was made for my group project class, but has been killed to do my teacher, might continue in the future
+A Project that was made for my group project class, but my teacher.... might continue in the future
 ![image](https://github.com/user-attachments/assets/29394389-149a-437a-a852-f0ff0ac4e9a1)
 
 
