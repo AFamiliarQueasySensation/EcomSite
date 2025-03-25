@@ -1,5 +1,5 @@
 
-# Shopify Front ENd
+# Shopify Front End
 
 A Project that was made for my group project class, but my teacher.... might continue in the future
 ![image](https://github.com/user-attachments/assets/29394389-149a-437a-a852-f0ff0ac4e9a1)
