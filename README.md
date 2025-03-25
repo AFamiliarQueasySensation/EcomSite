@@ -51,7 +51,7 @@ Ensure you have the following installed:
 
 ## Screenshots
 _Main Menu_ <br>
-<img src="https://imgur.com/a/CXeYEU5" alt="Main Menu" width="300">
+<img src="[https://imgur.com/a/CXeYEU5](https://imgur.com/a/CXeYEU5)" alt="Main Menu" width="300">
 
 _Display Results_ <br>
 <img src="https://imgur.com/3MIXwhm" alt="Display Results" width="300">
