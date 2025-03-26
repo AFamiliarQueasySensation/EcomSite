@@ -66,5 +66,5 @@ _Item In Cart_ <br>
 
 ---
 
-_**Created by:** Aryan Malhotra, Shayan Mohsin, Shazli Mekrani, Siddharth Singh, Grant Von Hagen_
+_**Created by:** Siddharth Singh, Grant Von Hagen_
 
